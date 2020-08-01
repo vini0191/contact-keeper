@@ -4,13 +4,17 @@
   "description": "Contact manager app",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js"
+    "clientinstall": "( cd ./client && yarn)",
+    "start": "nonode -r esm server.js",
+    "server": "nodemon -r esm server.js",
+    "client": "( cd ./client && yarn start)",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
   },
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "config": "^3.3.1",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "express-validator": "^6.6.0",
     "jsonwebtoken": "^8.5.1",
