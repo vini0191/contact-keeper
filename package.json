@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "clientinstall": "( cd ./client && yarn)",
-    "start": "nonode -r esm server.js",
+    "start": "node -r esm server.js",
     "server": "nodemon -r esm server.js",
     "client": "( cd ./client && yarn start)",
     "dev": "concurrently \"yarn server\" \"yarn client\""
